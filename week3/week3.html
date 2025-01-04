@@ -3,22 +3,33 @@
         <title>Hello</title>
     </head>
     <body>
+        <h1>TODO</h1>
+        <div>
+            <div id="todo-1">
+                <h3>1. TODO 1</h3>
+                <button onclick="deleteTODO(1)">Delete todo</button>
+            </div>
+            <div id="todo-2">
+                <h3>2. TODO 2</h3>
+                <button onclick="deleteTODO(2)">Delete todo</button>
+            </div>
+            <div id="todo-3">
+                <h3>3. TODO 3</h3>
+                <button onclick="deleteTODO(3)">Delete todo</button>
+            </div>
+        </div>
 
-        <h1 id="todo">TODO List</h1>
-        <h3 class="todo">1. Grocery</h3>
-        <h3 class="todo">2. Play game</h3>
-
-    <input type="text" placeholder="add here">
+    <input type="text" placeholder="add here" id="input">
     <button onclick="addTODO()">Add todo!</button>
         
 
-        <script>
-            function addTODO(){
-            const newtodo=document.querySelector("input");
-            const value=newtodo.value;
-            console.log(value);
-            console.log(document.querySelectorAll("h3")[0]);
-            }
+        <script src="script.js">
+            // function addTODO(){
+            // const newtodo=document.querySelector("input");
+            // const value=newtodo.value;
+            // console.log(value);
+            // console.log(document.querySelectorAll("h3")[0]);
+            // }
         </script>
     </body>
 
