@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Hello</title>
+    </head>
+    <body>
+
+        <h1 id="todo">TODO List</h1>
+        <h3 class="todo">1. Grocery</h3>
+        <h3 class="todo">2. Play game</h3>
+
+    <input type="text" placeholder="add here">
+    <button onclick="addTODO()">Add todo!</button>
+        
+
+        <script>
+            function addTODO(){
+            const newtodo=document.querySelector("input");
+            const value=newtodo.value;
+            console.log(value);
+            console.log(document.querySelectorAll("h3")[0]);
+            }
+        </script>
+    </body>
+
+
+
+</html>
