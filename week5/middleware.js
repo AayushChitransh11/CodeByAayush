@@ -33,7 +33,7 @@ function seniorCitizenMiddleware(req,res,next){
     }
 }
 
-//if you want the middleware should go from all the routes, use below
+//if you want the middleware should go from all the endpoints, use below
 // app.use(checkAgemiddleware)
 // app.get('/ride3',function(req,res){
 //     res.json({
@@ -41,6 +41,7 @@ function seniorCitizenMiddleware(req,res,next){
            
 //        })
 //    })
+// note- app.use works only for endpoints below it
 
 app.get('/ride1',function(req,res){
     if(checkAge(req.query.age)){
