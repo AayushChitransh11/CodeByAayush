@@ -21,7 +21,7 @@ function checkAgemiddleware(req,res,next){
     }
 }
 
-function seniorCitizenMiddelware(req,res,next){
+function seniorCitizenMiddleware(req,res,next){
     const age=req.query.age;
     if(age<60){
         next();
@@ -32,6 +32,15 @@ function seniorCitizenMiddelware(req,res,next){
         })
     }
 }
+
+//if you want the middleware should go from all the routes, use below
+// app.use(checkAgemiddleware)
+// app.get('/ride3',function(req,res){
+//     res.json({
+//            msg: "You have successfully riden ride 3"
+           
+//        })
+//    })
 
 app.get('/ride1',function(req,res){
     if(checkAge(req.query.age)){
@@ -69,7 +78,7 @@ app.get('/ride3',checkAgemiddleware,function(req,res){
         })
     })
     
-app.get('/ride4',checkAgemiddleware,seniorCitizenMiddelware,function(req,res){
+app.get('/ride4',checkAgemiddleware,seniorCitizenMiddleware,function(req,res){
     res.json({
         msg:"You have successfully riden ride 4"
     })
