@@ -1,9 +1,11 @@
 
 const express=require('express');
 const jwt=require('jsonwebtoken');
+const cors=require('cors');
 const JWT_SECRET="aayush";
 const app=express();
 app.use(express.json());
+app.use(express.static('public'));
 
 const users=[];
 
@@ -21,6 +23,13 @@ function auth(req,res,next){
         })
     }
 }
+
+app.get("/",function(req,res){
+    res.sendFile(__dirname+"/public/index.html");
+})
+
+app.use(cors());
+app.use
 app.post('/signup',function(req,res){
     const username=req.body.username;
     const password=req.body.password;
@@ -53,7 +62,7 @@ app.post('/signin',function(req,res){
     }
     else{
         const token=jwt.sign({
-            username
+            username: foundUser.username
         },JWT_SECRET);
         res.json({
             token: token
