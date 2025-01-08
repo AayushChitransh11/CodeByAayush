@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+
+        <script>
+            function sendRequest(){
+                const num1= document.getElementById("num1").value;
+                const num2= document.getElementById("num2").value;
+                 axios.post("http://localhost:3003/sum", {
+                    num1: num1,
+                    num2: num2
+                 })
+            }
+        </script>
+    </head>
+    <body>
+        <input id="num1" type="text" placeholder="Number 1">
+        <input id="num2" type="text" placeholder="Number 2">
+        <button onclick="sendRequest()">Sum</button>
+
+    </body>
+</html>
