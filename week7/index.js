@@ -5,7 +5,7 @@ const jwt=require("jsonwebtoken");
 const mongoose=require('mongoose');
 const JWT_SECRET="aayush";
 
-mongoose.connect("mongodb+srv://connectaayushchitransh:hwBxcAfdF3Re5SnH@cluster0.0iqh9.mongodb.net/todo-aayush");
+mongoose.connect("");
 const app=express();
 
 
