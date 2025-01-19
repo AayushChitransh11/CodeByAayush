@@ -1,0 +1,54 @@
+// Here is an example with Promises where we need to wait for both responses before performing an action
+
+const { error } = require("console");
+
+const promise1 = () => new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, 19);
+});
+
+const promise2 = () => new Promise((resolve, reject) => {
+    setTimeout(resolve, 3000, 23);
+});
+
+// Challenge 1
+
+// Try using JUST Promise syntax to sum the results of both Promises and console log the message below
+// "The answer to life, the universe, and everything is: 42"
+
+// REMINDER: If you want to use Promise.allSettled in your answer, you will need to run the following command in your terminal window first:
+// source  update_node.sh
+
+
+// your code here
+promise1().then(num1=>{
+    promise2().then(num2=>{
+        console.log(`The answer to life, the universe, and everything is: `,num1+num2);
+    })
+    .catch(error=>{
+        console.log(error);
+    });
+})
+.catch(error=>{
+    console.log(error);
+});
+
+
+// ---------------------------------------------------------------------------
+
+// Challenge 2
+// Now try the same example, but instead of implementing it with Promises, use Async/await
+// Console log: "The answer to life, the universe, and everything is: 42"
+     
+
+// your async/await code here
+// const res=async()=>{
+//     try{
+//         const val1= await promise1();
+//         const val2=await promise2();
+//         const ans=val1+val2;
+//         console.log(`The answer to life, the universe, and everything is:${ans}`);
+//     }catch(error){
+//         console.error("Error: ",error);
+//     }
+// }
+// res();
